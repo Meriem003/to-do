@@ -1,0 +1,94 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image:url(./téléchargement\ \(20\).jpg);
+    background-position: center;
+    background-size: cover;
+   }
+ 
+   .container {
+     width: 100%;
+     max-width: 800px;
+     margin: 0 auto;
+   }
+ 
+   .champs {
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0 auto;
+   }
+   
+   h1 {
+      margin-bottom: 20px;
+      color: rgb(50, 50, 96);
+   }
+   
+   input[type="text"],
+   input[type="date"]{
+     width: 150px;
+     padding: 10px;
+     border: none;
+     border-radius: 5px;
+     margin-bottom: 10px;
+     height: 50px;
+     margin-left: 10px;
+   }
+
+   input[type="date"]{
+     width: 100px;
+   }
+
+   #nameInput{
+    width: 100px;
+   }
+
+   #status{
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 70px;
+    margin-left: 10px;
+   }
+   
+   button {
+     background-color: transparent;
+     border: none;
+     cursor: pointer;
+     margin-left: 5px;
+   }
+   
+   ul {
+     width: 100%;
+     list-style: none;
+     padding: 0;
+   }
+   
+   li {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     background-color: #fff;
+     padding: 10px;
+     border-radius: 5px;
+     margin-bottom: 10px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   }
+   
+   ion-icon {
+     font-size: 20px;
+     margin-right: 5px;
+     background: midnightblue;
+     padding: 8px;
+     color: #f1f1f1;
+     border-radius: 50%;
+   }
+
