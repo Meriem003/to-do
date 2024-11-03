@@ -2,16 +2,15 @@ let taskList = document.getElementById("taskList");
 
 function addTask() {
     let taskValue = document.getElementById("taskInput").value;
-    let nameValue = document.getElementById("nameInput").value;
     let dateValue = document.getElementById("dateInput").value; 
     let statusValue = document.getElementById("status").value;
 
-  if (taskValue === "" || nameValue === "" || dateValue === "" || statusValue === "") {
+  if (taskValue === "" || dateValue === "" || statusValue === "") {
     return;
   }
 
   let li = document.createElement("li");
-  li.innerHTML = `${nameValue} --- ${taskValue} --- ${dateValue} --- ${statusValue}`;
+  li.innerHTML = `${taskValue}___${dateValue}___${statusValue}`;
 
   let deleteButton = document.createElement("button");
   deleteButton.innerHTML = '<ion-icon name="trash-outline" class="delete"></ion-icon>';
@@ -23,11 +22,10 @@ function addTask() {
   taskList.appendChild(li);
 
   taskInput.value = "";
-  nameInput.value = "";
   dateInput.value = "";
   statusInput.value = "";
 }
 
-function deleteTask(task) {
+function deleteTask(task){
     taskList.removeChild(task);
 }

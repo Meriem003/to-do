@@ -1,14 +1,36 @@
-body {
+body{
+  margin: 0;
+  background-image:url(./img/conquete\ wallpaper.jfif);
+  background-position: center;
+}
+
+
+nav{
+  border:1px solid #86476e89;
+  background-color: rgba(134, 70, 109, 0.671);
+  display: flex;
+}
+
+nav .M{
+  color: #ffffff;
+  font-family: 'Dancing Script';
+  font-size: 20px;
+  margin-left:20px;
+}
+
+nav img{
+  width: 120px;
+  display: flex;
+  position: relative;
+  left: 75%;
+}
+
+article {
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-image:url(./téléchargement\ \(20\).jpg);
-    background-position: center;
-    background-size: cover;
    }
  
    .container {
@@ -26,26 +48,24 @@ body {
    
    h1 {
       margin-bottom: 20px;
-      color: rgb(50, 50, 96);
+      color: #86476e;
+      background-color: #eadde574;
    }
    
    input[type="text"],
    input[type="date"]{
-     width: 150px;
+     width: 250px;
      padding: 10px;
      border: none;
      border-radius: 5px;
      margin-bottom: 10px;
      height: 50px;
      margin-left: 10px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    }
 
    input[type="date"]{
      width: 100px;
-   }
-
-   #nameInput{
-    width: 100px;
    }
 
    #status{
@@ -56,6 +76,7 @@ body {
     margin-bottom: 10px;
     height: 70px;
     margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    }
    
    button {
@@ -72,11 +93,12 @@ body {
    }
    
    li {
-     width: 100%;
+     width: 90%;
      display: flex;
      align-items: center;
-     justify-content: space-around;
+     justify-content: space-evenly;
      background-color: #fff;
+     margin-left: 50px;
      padding: 10px;
      border-radius: 5px;
      margin-bottom: 10px;
@@ -86,9 +108,10 @@ body {
    ion-icon {
      font-size: 20px;
      margin-right: 5px;
-     background: midnightblue;
+     background: #b484a2;
      padding: 8px;
-     color: #f1f1f1;
+     color: #ffffff;
      border-radius: 50%;
    }
+
 
