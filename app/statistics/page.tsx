@@ -1,6 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+/**
+ * Page Statistiques
+ * Graphiques et métriques de productivité
+ */
+
+import { useMemo } from "react"react"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useTodoStore } from "@/lib/store"

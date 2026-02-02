@@ -1,7 +1,12 @@
 "use client"
 
+/**
+ * Page Paramètres
+ * Gestion du thème, catégories, notifications et import/export des données
+ */
+
 import type React from "react"
-import { useState } from "react"
+import { useState } from "react"react"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"

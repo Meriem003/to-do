@@ -1,6 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+/**
+ * Page Dashboard
+ * Vue d'ensemble avec statistiques, tâches du jour et en retard
+ */
+
+import { useMemo } from "react"react"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TaskList } from "@/components/task-list"

@@ -1,7 +1,11 @@
 "use client"
 
-import type React from "react"
+/**
+ * Layout principal de l'application
+ * Inclut la sidebar et le header avec le contenu principal
+ */
 
+import type React from "react"
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "./app-sidebar"
 import { Separator } from "@/components/ui/separator"

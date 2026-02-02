@@ -1,5 +1,10 @@
 "use client"
 
+/**
+ * Composant de liste de tâches
+ * Affiche une liste de TaskCard avec gestion de l'édition
+ */
+
 import { useState } from "react"
 import { TaskCard } from "./task-card"
 import { TaskDialog } from "./task-dialog"

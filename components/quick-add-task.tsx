@@ -1,7 +1,11 @@
 "use client"
 
-import type React from "react"
+/**
+ * Composant d'ajout rapide de tâche
+ * Permet d'ajouter une tâche en un clic depuis n'importe quelle vue
+ */
 
+import type React from "react"
 import { useState } from "react"
 import { Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"

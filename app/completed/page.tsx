@@ -1,6 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+/**
+ * Page Tâches Terminées
+ * Affiche les tâches complétées avec option de suppression en masse
+ */
+
+import { useMemo } from "react"react"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TaskList } from "@/components/task-list"

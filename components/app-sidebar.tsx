@@ -1,5 +1,10 @@
 "use client"
 
+/**
+ * Barre latérale de navigation
+ * Contient les liens vers toutes les vues et le bouton d'ajout de tâche
+ */
+
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {

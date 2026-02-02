@@ -1,15 +1,24 @@
+/**
+ * Store Zustand pour la gestion d'état de l'application Todo
+ * Utilise la persistance localStorage pour sauvegarder les données
+ */
+
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import type { Task, Category, Settings, FilterOptions } from "./types"
 
+// ============================================
+// INTERFACE DU STORE
+// ============================================
+
 interface TodoStore {
-  // State
+  // État
   tasks: Task[]
   categories: Category[]
   settings: Settings
   filterOptions: FilterOptions
 
-  // Task actions
+  // Actions sur les tâches
   addTask: (task: Omit<Task, "id" | "createdAt" | "updatedAt">) => void
   updateTask: (id: string, updates: Partial<Task>) => void
   deleteTask: (id: string) => void
@@ -17,36 +26,42 @@ interface TodoStore {
   duplicateTask: (id: string) => void
   archiveTask: (id: string) => void
 
-  // SubTask actions
+  // Actions sur les sous-tâches
   addSubTask: (taskId: string, title: string) => void
   toggleSubTask: (taskId: string, subTaskId: string) => void
   deleteSubTask: (taskId: string, subTaskId: string) => void
 
-  // Category actions
+  // Actions sur les catégories
   addCategory: (category: Omit<Category, "id">) => void
   updateCategory: (id: string, updates: Partial<Category>) => void
   deleteCategory: (id: string) => void
 
-  // Filter actions
+  // Actions sur les filtres
   setFilterOptions: (options: FilterOptions) => void
   clearFilters: () => void
 
-  // Settings actions
+  // Actions sur les paramètres
   updateSettings: (updates: Partial<Settings>) => void
 
-  // Bulk actions
+  // Actions en masse
   deleteCompletedTasks: () => void
   exportData: () => string
   importData: (data: string) => void
 }
 
+// ============================================
+// VALEURS PAR DÉFAUT
+// ============================================
+
+/** Catégories prédéfinies */
 const defaultCategories: Category[] = [
-  { id: "1", name: "Work", color: "#3b82f6", icon: "💼" },
-  { id: "2", name: "Personal", color: "#10b981", icon: "🏠" },
-  { id: "3", name: "Shopping", color: "#f59e0b", icon: "🛒" },
-  { id: "4", name: "Health", color: "#ef4444", icon: "❤️" },
+  { id: "1", name: "Travail", color: "#3b82f6", icon: "💼" },
+  { id: "2", name: "Personnel", color: "#10b981", icon: "🏠" },
+  { id: "3", name: "Courses", color: "#f59e0b", icon: "🛒" },
+  { id: "4", name: "Santé", color: "#ef4444", icon: "❤️" },
 ]
 
+/** Paramètres par défaut */
 const defaultSettings: Settings = {
   theme: "system",
   notifications: {
@@ -63,6 +78,10 @@ const defaultSettings: Settings = {
   },
   defaultView: "dashboard",
 }
+
+// ============================================
+// CRÉATION DU STORE
+// ============================================
 
 export const useTodoStore = create<TodoStore>()(
   persist(

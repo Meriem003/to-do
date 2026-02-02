@@ -1,8 +1,12 @@
 "use client"
 
-import type React from "react"
+/**
+ * Modal de création/édition de tâche
+ * Formulaire complet avec tous les champs d'une tâche
+ */
 
-import { useState, useEffect } from "react"
+import type React from "react"
+import { useState, useEffect } from "react"react"
 import { format } from "date-fns"
 import { CalendarIcon, Plus, X } from "lucide-react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"

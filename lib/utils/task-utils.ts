@@ -1,30 +1,49 @@
+/**
+ * Utilitaires pour la manipulation des tâches
+ * Contient les fonctions de filtrage, calcul de stats et couleurs
+ */
+
 import type { Task, Priority, Stats } from "../types"
 import { isToday, isThisWeek, isThisMonth, startOfDay } from "date-fns"
 
-export function getTasksByStatus(tasks: Task[], status: Task["status"]) {
+// ============================================
+// FONCTIONS DE FILTRAGE
+// ============================================
+
+/** Filtre les tâches par statut */
+export function getTasksByStatus(tasks: Task[], status: Task["status"]): Task[] {
   return tasks.filter((task) => task.status === status && !task.archived)
 }
 
-export function getTasksByPriority(tasks: Task[], priority: Priority) {
+/** Filtre les tâches par priorité */
+export function getTasksByPriority(tasks: Task[], priority: Priority): Task[] {
   return tasks.filter((task) => task.priority === priority && !task.archived)
 }
 
-export function getTodayTasks(tasks: Task[]) {
+/** Récupère les tâches du jour */
+export function getTodayTasks(tasks: Task[]): Task[] {
   return tasks.filter((task) => !task.archived && task.dueDate && isToday(new Date(task.dueDate)))
 }
 
-export function getUpcomingTasks(tasks: Task[]) {
+/** Récupère les tâches à venir */
+export function getUpcomingTasks(tasks: Task[]): Task[] {
   const now = new Date()
   return tasks.filter((task) => !task.archived && task.dueDate && new Date(task.dueDate) > now)
 }
 
-export function getOverdueTasks(tasks: Task[]) {
+/** Récupère les tâches en retard */
+export function getOverdueTasks(tasks: Task[]): Task[] {
   const now = startOfDay(new Date())
   return tasks.filter(
     (task) => !task.archived && task.status !== "completed" && task.dueDate && new Date(task.dueDate) < now,
   )
 }
 
+// ============================================
+// CALCUL DES STATISTIQUES
+// ============================================
+
+/** Calcule toutes les statistiques des tâches */
 export function calculateStats(tasks: Task[]): Stats {
   const activeTasks = tasks.filter((task) => !task.archived)
   const completedTasks = activeTasks.filter((task) => task.status === "completed")
@@ -66,8 +85,13 @@ export function calculateStats(tasks: Task[]): Stats {
   }
 }
 
+// ============================================
+// COULEURS PAR PRIORITÉ ET STATUT
+// ============================================
+
+/** Couleur du texte selon la priorité */
 export function getPriorityColor(priority: Priority): string {
-  const colors = {
+  const colors: Record<Priority, string> = {
     low: "text-blue-500",
     medium: "text-yellow-500",
     high: "text-orange-500",
@@ -76,8 +100,9 @@ export function getPriorityColor(priority: Priority): string {
   return colors[priority]
 }
 
+/** Couleur de fond selon la priorité */
 export function getPriorityBgColor(priority: Priority): string {
-  const colors = {
+  const colors: Record<Priority, string> = {
     low: "bg-blue-500/10",
     medium: "bg-yellow-500/10",
     high: "bg-orange-500/10",
@@ -86,8 +111,9 @@ export function getPriorityBgColor(priority: Priority): string {
   return colors[priority]
 }
 
+/** Couleur du texte selon le statut */
 export function getStatusColor(status: Task["status"]): string {
-  const colors = {
+  const colors: Record<Task["status"], string> = {
     todo: "text-muted-foreground",
     "in-progress": "text-primary",
     completed: "text-success",

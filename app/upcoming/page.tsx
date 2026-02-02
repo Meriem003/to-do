@@ -1,6 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+/**
+ * Page Tâches À Venir
+ * Affiche les tâches futures groupées par jour (7 jours) puis "Plus tard"
+ */
+
+import { useMemo } from "react"react"
 import { format, addDays, startOfDay, endOfDay } from "date-fns"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

@@ -1,6 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+/**
+ * Page Kanban
+ * Vue en colonnes par statut (To Do, In Progress, Completed)
+ */
+
+import { useMemo } from "react"react"
 import { AppLayout } from "@/components/app-layout"
 import { KanbanColumn } from "@/components/kanban-column"
 import { useTodoStore } from "@/lib/store"

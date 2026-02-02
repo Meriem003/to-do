@@ -1,5 +1,10 @@
 "use client"
 
+/**
+ * Composant carte de tâche
+ * Affiche une tâche individuelle avec ses informations et actions
+ */
+
 import { useState } from "react"
 import { format } from "date-fns"
 import { MoreVertical, Calendar, Tag, CheckCircle2, Clock, Trash2, Copy, Edit } from "lucide-react"

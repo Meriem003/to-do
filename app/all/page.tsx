@@ -1,5 +1,10 @@
 "use client"
 
+/**
+ * Page Toutes les Tâches
+ * Liste complète avec filtres de recherche, statut, priorité et catégorie
+ */
+
 import { useMemo, useState } from "react"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

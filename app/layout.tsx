@@ -7,10 +7,11 @@ import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
+/** Métadonnées SEO de l'application */
 export const metadata: Metadata = {
-  title: "Advanced Todo List",
-  description: "A powerful task management application",
-  generator: "v0.app",
+  title: "Todo App - Gestion de Tâches",
+  description: "Application moderne de gestion de tâches avec tableau de bord, vue Kanban, calendrier et statistiques",
+  keywords: ["todo", "tâches", "productivité", "kanban", "gestion de projet"],
 }
 
 export default function RootLayout({

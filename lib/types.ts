@@ -1,12 +1,22 @@
+/**
+ * Types et interfaces pour l'application Todo
+ * Définit la structure des données utilisées dans toute l'application
+ */
+
+/** Niveaux de priorité des tâches */
 export type Priority = "low" | "medium" | "high" | "urgent"
+
+/** Statuts possibles d'une tâche */
 export type TaskStatus = "todo" | "in-progress" | "completed"
 
+/** Représente une sous-tâche */
 export interface SubTask {
   id: string
   title: string
   completed: boolean
 }
 
+/** Représente une tâche principale */
 export interface Task {
   id: string
   title: string
@@ -20,18 +30,20 @@ export interface Task {
   categoryId?: string
   tags: string[]
   subTasks: SubTask[]
-  estimatedTime?: number // in minutes
-  actualTime?: number // in minutes
+  estimatedTime?: number   // Temps estimé en minutes
+  actualTime?: number      // Temps réel en minutes
   archived: boolean
 }
 
+/** Représente une catégorie de tâches */
 export interface Category {
   id: string
   name: string
-  color: string
-  icon?: string
+  color: string  // Format hexadécimal (#RRGGBB)
+  icon?: string  // Emoji optionnel
 }
 
+/** Paramètres de l'application */
 export interface Settings {
   theme: "light" | "dark" | "system"
   notifications: {
@@ -40,15 +52,16 @@ export interface Settings {
     dailySummary: boolean
   }
   pomodoroSettings: {
-    workDuration: number
-    shortBreak: number
-    longBreak: number
+    workDuration: number     // Durée de travail en minutes
+    shortBreak: number       // Pause courte en minutes
+    longBreak: number        // Pause longue en minutes
     autoStartBreaks: boolean
     autoStartPomodoros: boolean
   }
   defaultView: "dashboard" | "today" | "upcoming" | "all" | "kanban" | "calendar"
 }
 
+/** Statistiques calculées */
 export interface Stats {
   totalTasks: number
   completedTasks: number
@@ -62,6 +75,7 @@ export interface Stats {
   productivityScore: number
 }
 
+/** Options de filtrage des tâches */
 export interface FilterOptions {
   status?: TaskStatus[]
   priority?: Priority[]

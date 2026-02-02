@@ -1,6 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+/**
+ * Page Aujourd'hui
+ * Affiche les tâches du jour organisées par statut
+ */
+
+import { useMemo } from "react"react"
 import { format } from "date-fns"
 import { AppLayout } from "@/components/app-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

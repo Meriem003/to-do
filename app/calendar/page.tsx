@@ -1,6 +1,11 @@
 "use client"
 
-import { useState, useMemo } from "react"
+/**
+ * Page Calendrier
+ * Vue mensuelle des tâches avec sélection de date
+ */
+
+import { useState, useMemo } from "react"react"
 import { format } from "date-fns"
 import { AppLayout } from "@/components/app-layout"
 import { CalendarView } from "@/components/calendar-view"
